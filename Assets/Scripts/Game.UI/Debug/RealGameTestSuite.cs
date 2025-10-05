@@ -4,6 +4,7 @@ using TMPro;
 using Game.UI.Themes;
 using Game.UI.SceneManager;
 using Game.Services;
+using Game.Core;
 using System.Collections;
 
 namespace Game.UI.Debug
@@ -19,9 +20,7 @@ namespace Game.UI.Debug
         [SerializeField] private float testDelay = 2f;
 
         [Header("Camera Test Settings")]
-        [SerializeField] private bool testCameraDetection = true;
-        [SerializeField] private bool testPlayerDetection = true;
-        [SerializeField] private bool testGameFlow = true;
+        // Test settings removed - using auto tests instead
 
         private UISceneManager _uiSceneManager;
         private bool _testsRunning = false;
@@ -152,7 +151,7 @@ namespace Game.UI.Debug
             UnityEngine.Debug.Log($"🎮 Test {_testStep}: Player Detection...");
             
             // Test PlayerArea component
-            var playerArea = FindObjectOfType<PlayerArea>();
+            var playerArea = FindFirstObjectByType<PlayerArea>();
             if (playerArea != null)
             {
                 UnityEngine.Debug.Log("✅ PlayerArea found");
@@ -180,7 +179,7 @@ namespace Game.UI.Debug
             UnityEngine.Debug.Log($"🎮 Test {_testStep}: Game Flow...");
             
             // Test GameFlow
-            var gameFlow = FindObjectOfType<GameFlow>();
+            var gameFlow = FindFirstObjectByType<GameFlow>();
             if (gameFlow != null)
             {
                 UnityEngine.Debug.Log("✅ GameFlow found");
@@ -285,7 +284,7 @@ namespace Game.UI.Debug
         {
             UnityEngine.Debug.Log("🎮 Testing Player Detection...");
             
-            var playerArea = FindObjectOfType<PlayerArea>();
+            var playerArea = FindFirstObjectByType<PlayerArea>();
             if (playerArea != null)
             {
                 playerArea.Initialize();
@@ -301,7 +300,7 @@ namespace Game.UI.Debug
         {
             UnityEngine.Debug.Log("🎮 Testing Game Flow...");
             
-            var gameFlow = FindObjectOfType<GameFlow>();
+            var gameFlow = FindFirstObjectByType<GameFlow>();
             if (gameFlow != null)
             {
                 gameFlow.RequestStart();
