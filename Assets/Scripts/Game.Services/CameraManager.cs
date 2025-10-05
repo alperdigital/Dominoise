@@ -6,9 +6,9 @@ namespace Game.Services
     public sealed class CameraManager : MonoBehaviour, ICameraManager
     {
         [Header("Camera References")]
-        [SerializeField] private Camera leftCamera;
-        [SerializeField] private Camera rightCamera;
-        [SerializeField] private Camera mainCamera;
+        [SerializeField] private UnityEngine.Camera leftCamera;
+        [SerializeField] private UnityEngine.Camera rightCamera;
+        [SerializeField] private UnityEngine.Camera mainCamera;
 
         [Header("Camera Settings")]
         [SerializeField] private float cameraSwitchDuration = 1f;
@@ -16,9 +16,9 @@ namespace Game.Services
 
         private bool _isSwitching = false;
 
-        public Camera LeftCamera => leftCamera;
-        public Camera RightCamera => rightCamera;
-        public Camera MainCamera => mainCamera;
+        public UnityEngine.Camera LeftCamera => leftCamera;
+        public UnityEngine.Camera RightCamera => rightCamera;
+        public UnityEngine.Camera MainCamera => mainCamera;
 
         void Awake()
         {
@@ -69,7 +69,7 @@ namespace Game.Services
             StartCoroutine(SwitchToPlayerCamerasCoroutine());
         }
 
-        System.Collections.IEnumerator SwitchCameraCoroutine(Camera targetCamera)
+        System.Collections.IEnumerator SwitchCameraCoroutine(UnityEngine.Camera targetCamera)
         {
             _isSwitching = true;
 

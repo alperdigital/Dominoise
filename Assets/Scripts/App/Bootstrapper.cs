@@ -32,6 +32,17 @@ namespace App
             // Camera Manager'ı ekle ve kaydet.
             var cameraManager = servicesHost.AddComponent<CameraManager>();
             Service.Register<ICameraManager>(cameraManager);
+            
+            // Dual Player Camera Manager
+            var dualCameraManager = servicesHost.AddComponent<Game.Services.Camera.DualPlayerCameraManager>();
+            
+            // Pose Detector
+            var poseDetector = servicesHost.AddComponent<Game.Services.PoseDetection.PoseDetector>();
+            Service.Register<Game.Services.PoseDetection.PoseDetector>(poseDetector);
+            
+            // Center Object Manager
+            var centerObjectManager = servicesHost.AddComponent<Game.Core.CenterObjectManager>();
+            Service.Register<Game.Core.CenterObjectManager>(centerObjectManager);
 
             // --- 2. OYUNA ÖZEL SERVİSLER ---
 

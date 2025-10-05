@@ -4,9 +4,9 @@ namespace Game.Services
 {
     public interface ICameraManager
     {
-        Camera LeftCamera { get; }
-        Camera RightCamera { get; }
-        Camera MainCamera { get; }
+        UnityEngine.Camera LeftCamera { get; }
+        UnityEngine.Camera RightCamera { get; }
+        UnityEngine.Camera MainCamera { get; }
 
         void EnablePlayerCameras(bool enable);
         void SwitchToMainCamera();

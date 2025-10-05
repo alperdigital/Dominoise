@@ -15,15 +15,28 @@ public sealed class ScoringState : IGameState
 
     public void Enter()
     {
-        // MVP: rastgele skor, sonra PoseScorer ile değişecek
-        _p1 = Random.Range(60, 97);
-        _p2 = Random.Range(60, 97);
+        // Gerçek poz benzerlik hesaplama (şimdilik simülasyon)
+        var poseDetector = Service.Get<Game.Services.PoseDetection.PoseDetector>();
+        if (poseDetector != null)
+        {
+            _p1 = Mathf.RoundToInt(poseDetector.Player1Similarity * 100);
+            _p2 = Mathf.RoundToInt(poseDetector.Player2Similarity * 100);
+        }
+        else
+        {
+            // Fallback: rastgele skor
+            _p1 = Random.Range(60, 97);
+            _p2 = Random.Range(60, 97);
+        }
+        
         Service.Get<IEventBus>().Publish(new UiEvents.ShowPercents(_p1, _p2));
 
-        // skorboard güncelle
+        // skorboard güncelle - en yüksek benzerlik puan alır
         if (_p1 > _p2) s1++;
         else if (_p2 > _p1) s2++;
         Service.Get<IEventBus>().Publish(new UiEvents.UpdateScoreboard(s1, s2));
+        
+        UnityEngine.Debug.Log($"🏆 Round Results - P1: {_p1}%, P2: {_p2}% | Score: {s1}-{s2}");
     }
 
     public void Tick()
