@@ -1,0 +1,17 @@
+{
+    "name": "Game.Services.Save",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7ad111412475140848fd95a4f16186cd",
+        "GUID:b7f67da4eb163412fb05b4ea6fc74b5b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

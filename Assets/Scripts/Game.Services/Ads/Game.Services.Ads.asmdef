@@ -1,0 +1,16 @@
+{
+    "name": "Game.Services.Ads",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b7f67da4eb163412fb05b4ea6fc74b5b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

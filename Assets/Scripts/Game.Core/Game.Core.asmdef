@@ -1,0 +1,20 @@
+{
+    "name": "Game.Core",
+    "rootNamespace": "",
+    "references": [
+        "Game.Services",
+        "Game.Services.ServiceLocator",
+        "Game.Services.EventBus",
+        "Game.Services.Economy",
+        "Game.SharedSo"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

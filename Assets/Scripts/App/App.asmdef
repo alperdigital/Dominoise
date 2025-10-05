@@ -1,0 +1,25 @@
+{
+    "name": "App",
+    "rootNamespace": "",
+    "references": [
+        "Game.Core",
+        "Game.Services",
+        "Game.Services.ServiceLocator",
+        "Game.Services.EventBus",
+        "Game.Services.Economy",
+        "Game.Services.Ads",
+        "Game.Services.Save",
+        "Game.SharedSo",
+        "Game.UI",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
